@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="We love embeded systems">
+    <meta name="author" content="Awolf Nigler">
+    <title>Index Page</title>
+    <link rel="stylesheet" href="../../static/css/styles.css">
+    <link rel="icon" href="">
+    <script src="../../static/js/script.js" defer></script>
+</head>
+
+<body>
+    <!-- Background stuffs-->
+    <div class="backgrosund"></div>
+    <div class="ball ball-color1"></div>
+    <div class="ball ball-color2"></div>
+    <div class="ball ball-color3"></div>
+
+    <!-- Navbar stuffs-->
+    <section class="navbar-container glassBG-White">
+        <div class="navbar">
+            <div class="left">
+                <input class="CheckBox" type="checkbox" id="hamburger-checkbox">
+                <a href="">
+                    <img src="../../static/images/Logo.png" alt="some image">
+                </a>
+                <label class="Label" for="hamburger-checkbox">
+                    ☰
+                </label>
+                <div class="items">
+                    <a class="item" href="Index.html">HOME</a>
+                    <a class="item" href="Docs.html">Documenentations</a>
+                    <a class="item" href="AboutMe.html">AboutUs</a>
+                    <a class="item" href="Login.html">Login</a>
+                </div>
+            </div>
+            <div class="right">
+                <form class="search-bar" action="/search" method="get">
+                    <input type="text" name="q" placeholder="Search...">
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+
+
+
+
+        </div>
+    </section>
+
+
+    <!-- Curved Background -->
+    <div class="image-container">
+
+        <div class="overlay">
+            <div class="box">
+                <h2>Wanna dive </h2>
+                <h2>into embedded </h2>
+                <h2> systems ?</h2>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <div class="carousel-container">
+        <button class="prev">‹</button>
+
+        <div class="viewport">
+            <div class="track">
+                <div class="item">
+                    <img src="../../static/images/GIF1.gif" alt="">
+                    <h3>
+                        1
+                    </h3>
+                    <p>
+                        Graphics processors are now extensively used for AI workloads. Their parallel processing
+                        capabilities
+                        accelerate machine learning tasks, enabling faster training of neural networks and more
+                        responsive
+                        AI
+                        applications.
+                    </p>
+                    <a href="#" class="SUBLINK_GRAY">
+                        Read more
+                    </a>
+
+                </div>
+                <div class="item"> <img src="../../static/images/GIF1.gif" alt="">
+                    <h3>
+                        2
+                    </h3>
+                    <p>
+                        Graphics processors are now extensively used for AI workloads. Their parallel processing
+                        capabilities
+                        accelerate machine learning tasks, enabling faster training of neural networks and more
+                        responsive
+                        AI
+                        applications.
+                    </p>
+                    <a href="#" class="SUBLINK_GRAY">i love you </a>
+                </div>
+
+                <div class="item"> <img src="../../static/images/GIF1.gif" alt="">
+                    <h3>
+                        3
+                    </h3>
+                    <p>
+                        Graphics processors are now extensively used for AI workloads. Their parallel processing
+                        capabilities
+                        accelerate machine learning tasks, enabling faster training of neural networks and more
+                        responsive
+                        AI
+                        applications.
+                    </p>
+                    <a href="#" class="SUBLINK_GRAY">i love you </a>
+                </div>
+
+                <div class="item"> <img src="../../static/images/GIF1.gif" alt="">
+                    <h3>
+                        GPU Acceleration for AI
+                    </h3>
+                    <p>
+                        Graphics processors are now extensively used for AI workloads. Their parallel processing
+                        capabilities
+                        accelerate machine learning tasks, enabling faster training of neural networks and more
+                        responsive
+                        AI
+                        applications.
+                    </p>
+                    <a href="#" class="SUBLINK_GRAY">i love you </a>
+                </div>
+
+                <div class="item"> <img src="../../static/images/GIF1.gif" alt="">
+                    <h3>
+                        GPU Acceleration for AI
+                    </h3>
+                    <p>
+                        Graphics processors are now extensively used for AI workloads. Their parallel processing
+                        capabilities
+                        accelerate machine learning tasks, enabling faster training of neural networks and more
+                        responsive
+                        AI
+                        applications.
+                    </p>
+                    <a href="#" class="SUBLINK_GRAY">i love you </a>
+                </div>
+                <div class="item"> <img src="../../static/images/GIF1.gif" alt="">
+                    <h3>
+                        GPU Acceleration for AI
+                    </h3>
+                    <p>
+                        Graphics processors are now extensively used for AI workloads. Their parallel processing
+                        capabilities
+                        accelerate machine learning tasks, enabling faster training of neural networks and more
+                        responsive
+                        AI
+                        applications.
+                    </p>
+                    <a href="#" class="SUBLINK_GRAY">i love you </a>
+                </div>
+                <div class="item"> <img src="../../static/images/GIF1.gif" alt="">
+                    <h3>
+                        GPU Acceleration for AI
+                    </h3>
+                    <p>
+                        Graphics processors are now extensively used for AI workloads. Their parallel processing
+                        capabilities
+                        accelerate machine learning tasks, enabling faster training of neural networks and more
+                        responsive
+                        AI
+                        applications.
+                    </p>
+                    <a href="#" class="SUBLINK_GRAY">i love you </a>
+                </div>
+            </div>
+        </div>
+
+        <button class="next">›</button>
+    </div>
+
+    <script>
+        const track = document.querySelector(".track");
+        const items = document.querySelectorAll(".carousel-container .item");
+        const nextBtn = document.querySelector(".next");
+        const prevBtn = document.querySelector(".prev");
+        const style = getComputedStyle(track);
+        const gap = parseInt(style.gap); // returns 20 in this example
+
+        let index = 0;
+
+        const visibleItems = 4;
+        const totalItems = items.length;
+
+        // Move one item at a time
+        function updateSlider() {
+            const itemWidth = items[0].offsetWidth;
+            console.log(items[0].offsetWidth);
+
+            const offset = index * (itemWidth + gap); // include the gap
+            track.style.transform = `translateX(-${offset}px)`;
+        }
+
+        nextBtn.addEventListener("click", () => {
+            if (index < totalItems - visibleItems) {
+                index++;
+                updateSlider();
+            }
+
+        });
+        prevBtn.addEventListener("click", () => {
+            if (index > 0) {
+                index--;
+                updateSlider();
+            }
+        });
+    </script>
+
+
+    <!-- Intro section-->
+
+    <main class="main-section">
+        <section class=" baseContainer">
+            <div class="sectionContent glassBG-White">
+                <header>
+                    <!-- TODO i also need a logo here-->
+                    <h1> Vulkan Community</h1>
+                    <h2> Whoe are we </h2>
+                    <p>
+                        We are a diverse community of graphics enthusiasts, hardware developers, and visual
+                        computing
+                        professionals.
+                        United by our passion for high-performance graphics, we share insights on GPUs, rendering
+                        pipelines,
+                        and
+                        cutting-edge graphics technologies. Our members range from hobbyists building custom rigs to
+                        engineers
+                        optimizing real-time engines, all collaborating to exchange knowledge, solve challenges, and
+                        drive
+                        innovation in the graphics hardware space.
+                    </p>
+                </header>
+            </div>
+        </section>
+
+        <!-- Welcome section-->
+        <section class="baseContainer">
+            <div class="sectionContent glassBG-White">
+                <h2>Welcome to the Hardware Graphics Community</h2>
+                <p>
+                    Explore the latest discussions, tutorials, and resources for graphics hardware enthusiasts.
+                    Whether
+                    you
+                    are
+                    a beginner or an advanced developer, our community is designed to help you learn, share, and
+                    innovate.
+                </p>
+            </div>
+        </section>
+
+        <!-- Learn and explore section-->
+        <section class="baseContainer">
+            <div class="sectionContent glassBG-White">
+                <h2>Learn and Explore</h2>
+                <p>Dive into tutorials, guides, and technical breakdowns of graphics programming, GPU architecture,
+                    and
+                    rendering techniques. Our content is tailored for developers working with APIs like DirectX,
+                    OpenGL,
+                    Vulkan,
+                    and more.</p>
+            </div>
+        </section>
+
+        <!-- Document sections-->
+        <section class="baseContainer">
+            <div class="sectionContent glassBG-White">
+
+                <h2>Documentation & resources</h2>
+                <p>Our dedicated documentation section provides in-depth references, examples, and best practices
+                    for
+                    hardware
+                    graphics development. From shader programming to GPU optimization, find all the knowledge you
+                    need
+                    in
+                    one
+                    place.</p>
+                <a href="#TODO">Go to Documentation</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Communication stuffs -->
+    <section class="baseContainer">
+        <div class="sectionContent glassBG-Black">
+            <form action="#TODO" class="contact-form">
+                <p>Leave a comment</p>
+                <br>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" placeholder="We need money">
+                <br>
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" placeholder="Tahiti">
+                <br>
+                <label for="message">Message:</label>
+                <input type="text" id="message" name="message" rows="6" cols="40" required>
+                <br>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </section>
+
+
+    <!-- Footer Stuffs-->
+    <footer class="footer-container">
+        <div class="footer-content">
+            <div class="box1">
+                <h1>Usefull links</h1>
+                <a href="">I am a link</a>
+                <a href="">I am a link</a>
+                <a href="">I am a link</a>
+                <h1>Contact us</h1>
+                <a href="">I am a link</a>
+                <a href="">I am a link</a>
+            </div>
+            <div class="box2">
+                <h1>Colaborate with us</h1>
+                <a href="">I am a link</a>
+                <a href="">I am a link</a>
+                <a href="">I am a link</a>
+                <a href="">I am a link</a>
+                <a href="">I am a link</a>
+            </div>
+            <div class="box3">
+                <img src="../../static/images/Logo.png" alt="">
+           
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>

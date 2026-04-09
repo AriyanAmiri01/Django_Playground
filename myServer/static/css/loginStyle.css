@@ -1,0 +1,123 @@
+ /*_________________ LOG IN STUFF_______________*/
+ 
+ .authentication-container {
+     margin-top: 200px;
+     margin-bottom: 200px;
+     display: flex;
+     flex-direction: row;
+     justify-content: center;
+ }
+ 
+ .authentication-container .FLEX_CONTAINER_LOGIN_TAB {
+     display: flex;
+     width: 35%;
+     flex-direction: column;
+     padding: 10px;
+ }
+ 
+ .authentication-container .LOGIN_BUTTON {
+     background: none;
+     border-bottom: 5px black solid;
+     font-size: 16px;
+     cursor: pointer;
+     margin-top: 10px;
+     padding: 10px 20px;
+ }
+ 
+ .authentication-container .LOGIN_BUTTON:hover {
+     border-bottom: 5px solid blue;
+     transition: border-color 0.3s;
+ }
+ 
+ .authentication-container .BUTTON_FORM_CHANGE {
+     background: none;
+     border: none;
+     font-size: 16px;
+     cursor: pointer;
+     padding: 10px 20px;
+     border-bottom: 2px solid transparent;
+     transition: border-color 0.3s
+ }
+ 
+ .authentication-container .INPUT_LOGIN {
+     background-color: rgba(228, 228, 228, 0.685);
+     width: calc(100% - 10px);
+     padding: 10px;
+     margin: 5px;
+     border: 1px solid white;
+     box-sizing: border-box;
+ }
+ 
+ .authentication-container .CURRENT_FORM {
+     border-radius: 10px 10px 0px 0px;
+     backdrop-filter: blur(10px) saturate(150%);
+     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.07);
+     background: rgba(255, 255, 255, 0.15);
+ }
+ 
+ .authentication-container .INACTIVE {
+     display: none;
+ }
+ /*_________________ LOG IN STUFF _______________*/
+ /*
+    .container {
+        background: white;
+        padding: 30px;
+        border-radius: 8px;
+        width: 320px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .tabs {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 20px;
+    }
+
+    .tabs button {
+        background: none;
+        border: none;
+        font-size: 16px;
+        cursor: pointer;
+        padding: 10px 20px;
+        border-bottom: 2px solid transparent;
+        transition: border-color 0.3s;
+    }
+
+    .tabs button.active {
+        border-color: #007BFF;
+        font-weight: bold;
+    }
+
+    .form {
+        display: none;
+        flex-direction: column;
+    }
+
+    .form.active {
+        display: flex;
+    }
+
+    .input {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .button.submit {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        background: #007BFF;
+        color: white;
+        font-weight: bold;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    button.submit:hover {
+        background: #0056b3;
+    }
+*/

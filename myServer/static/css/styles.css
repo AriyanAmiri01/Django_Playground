@@ -1,0 +1,430 @@
+    * {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-family: sans-serif;
+        box-sizing: border-box;
+    }
+    /* ===== ===== ===== Navbar ===== ===== =====*/
+    
+    .navbar-container {
+        position: fixed;
+        top: 0;
+        z-index: 1;
+        width: 100%;
+        padding: 0px 10px 0px 10px;
+    }
+    
+    .navbar-container .navbar {
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .navbar-container .navbar .left {
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-items: center;
+    }
+    
+    .navbar-container .navbar .right {
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+        align-items: center;
+    }
+    
+    .navbar-container .navbar .items {
+        width: fit-content;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .navbar-container .navbar .right .search-bar {
+        width: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: end;
+        padding: 10px;
+    }
+    
+    .navbar-container .navbar .left img {
+        height: 48px;
+    }
+    
+    .navbar-container .navbar .navbar a {
+        color: black;
+    }
+    
+    .navbar-container .navbar .item {
+        padding: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 4px;
+        text-decoration: none;
+        font-size: larger;
+        border-radius: 15px;
+    }
+    
+    .navbar-container .navbar .item:hover {
+        background: rgba(171, 171, 171, 0.5);
+    }
+    
+    .navbar-container .search-bar input {
+        flex: 2;
+        padding: 12px;
+        background: rgb(237, 237, 237);
+        border-radius: 16px 0px 0px 16px;
+        width: 50%;
+    }
+    
+    .navbar-container .search-bar button {
+        max-width: 100px;
+        flex: 1;
+        width: fit-content;
+        padding: 10px;
+        background: lightgrey;
+    }
+    
+    .navbar-container .CheckBox {
+        display: none;
+    }
+    
+    .navbar-container .Label {
+        display: none;
+    }
+    /* Hamburger navbar */
+    
+    @media (max-width: 650px) {
+        .navbar-container .navbar {
+            flex-direction: column;
+            justify-content: start;
+            align-items: center;
+        }
+        .navbar-container .navbar .left {
+            display: flex;
+            flex-direction: column;
+        }
+        .navbar-container .Label {
+            display: block;
+            cursor: pointer;
+            position: relative;
+            width: 30px;
+            height: 30px;
+        }
+        .navbar-container .items {
+            width: 100%;
+            flex-direction: column;
+            max-height: 0;
+            overflow: hidden;
+            transition: 0.5s ease-in-out;
+        }
+        .navbar-container .navbar .item {
+            width: 100%;
+            padding: 15px;
+            border-radius: 0;
+            border-top: 0.5mm solid rgb(52, 53, 71);
+        }
+        .navbar-container .navbar .search-bar {
+            justify-content: center;
+        }
+        .navbar-container .navbar input {
+            border-radius: 0;
+        }
+        .navbar-container .CheckBox:checked~.items {
+            max-height: 500px;
+        }
+        .navbar-container .CheckBox:checked~.logo label::before {
+            content: "close";
+        }
+    }
+    /* ===== ===== ===== LiveBackgroung ===== ===== =====*/
+    
+    .background-container .ball {
+        position: fixed;
+        border-radius: 50%;
+        filter: blur(15px);
+        z-index: -1;
+    }
+    
+    .background-container .ball-color1 {
+        background: radial-gradient(circle at center, rgba(255, 255, 200, 1) 0%, rgba(255, 200, 50, 0.7) 40%, rgba(255, 150, 0, 0.3) 70%, rgba(255, 150, 0, 0) 100%);
+        top: 0%;
+        left: 25%;
+        width: 300px;
+        height: 300px;
+        animation-name: ANIMATION_BULB_1;
+        animation-duration: 15s;
+        animation-delay: 0s;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: both;
+        animation-iteration-count: infinite;
+        animation-direction: normal;
+    }
+    
+    .background-container .ball-color2 {
+        background: radial-gradient(circle at center, rgb(255, 169, 199) 0%, hwb(314 14% 10% / 0.7) 40%, rgba(145, 16, 82, 0.3) 70%, rgba(255, 150, 0, 0) 100%);
+        top: 50%;
+        left: 75%;
+        width: 400px;
+        height: 400px;
+        animation-name: ANIMATION_BULB_1;
+        animation-duration: 15s;
+        animation-delay: 10s;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: both;
+        animation-iteration-count: infinite;
+        animation-direction: normal;
+    }
+    
+    .background-container .ball-color3 {
+        background: radial-gradient(circle at center, rgb(255, 151, 243) 0%, rgba(207, 53, 189, 0.7) 40%, rgba(116, 33, 106, 0.3) 70%, rgba(255, 150, 0, 0) 100%);
+        top: 400px;
+        left: 250px;
+        width: 250px;
+        height: 200px;
+        animation-name: ANIMATION_BULB_1;
+        animation-duration: 15s;
+        animation-delay: 10s;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: both;
+        animation-iteration-count: infinite;
+        animation-direction: normal;
+    }
+    /* Animation stuffs*/
+    
+    @keyframes ANIMATION_BULB_1 {
+        0% {
+            transform: translate(0px, 0px);
+        }
+        25% {
+            transform: translate(-50px, 200px);
+        }
+        50% {
+            transform: translate(50px, 0px);
+        }
+        75% {
+            transform: translate(25px, -50px);
+        }
+        100% {
+            transform: translate(0px, 0px);
+        }
+    }
+    
+    .background-container .background {
+        position: fixed;
+        z-index: -1;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, rgb(120, 138, 146), rgb(255, 255, 255));
+        backdrop-filter: blur(10px);
+    }
+    /* ===== ===== ===== MessageBox-Container Styles ===== ===== ===== */
+    
+    .MessageBox-Container {
+        width: 100%;
+        padding: 20px 10px;
+        display: flex;
+        justify-content: stretch;
+    }
+    
+    .MessageBox-Content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        padding: 10px;
+    }
+    
+    .MessageBox-Container .MessageBox-Content label {
+        width: 100%;
+        color: white;
+        display: block;
+        margin-top: 10px;
+        font-weight: bold;
+    }
+    
+    .MessageBox-Container .MessageBox-Content p {
+        color: rgb(232, 232, 232);
+    }
+    
+    .MessageBox-Container .MessageBox-Content input {
+        width: 100%;
+        background-color: rgba(228, 228, 228, 0.685);
+        padding: 10px;
+        border: 1px solid white;
+    }
+    
+    .MessageBox-Container .MessageBox-Content button {
+        color: white;
+        margin-top: 15px;
+        padding: 10px 20px;
+        background-color: rgba(228, 228, 228, 0.797);
+        border: 2px solid white;
+    }
+    
+    .MessageBox-Container .MessageBox-Content button:hover {
+        background-color: rgba(147, 147, 147, 0.797);
+    }
+    /* ===== ===== ===== Footer Stuffs ===== ===== =====*/
+    
+    .footer-container {
+        bottom: 0px;
+        left: 0;
+        width: 100%;
+        height: fit-content;
+        padding: 20px 80px;
+        background-color: rgb(49, 49, 49);
+    }
+    
+    .footer-container .footer-content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: start;
+        gap: 10px;
+    }
+    
+    .footer-container .footer-content a {
+        color: black;
+        text-decoration: none;
+        font-size: larger;
+    }
+    
+    .footer-container .footer-content .box1 {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        gap: 5px;
+        align-items: start;
+        padding-top: 15px;
+    }
+    
+    .footer-container .footer-content .box2 {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        gap: 5px;
+        align-items: start;
+        padding-top: 15px;
+    }
+    
+    .footer-container .footer-content .box3 {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+    }
+    
+    .footer-container .footer-content img {
+        width: 60%;
+        color: white;
+    }
+    /* ===== ===== ===== Component Background ===== ===== =====*/
+    
+    .glassBG-White-OLD {
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to top right, rgba(154, 177, 177, 0.365), rgba(255, 255, 255, 0.21));
+        backdrop-filter: blur(0px);
+        border-top: 1px solid rgba(255, 255, 255, 0.434);
+        border-right: 1px solid rgba(255, 255, 255, 0.434);
+    }
+    
+    .glassBG-Black-OLD {
+        background: linear-gradient(to top right, rgba(21, 42, 51, 0.831), rgba(72, 47, 47, 0.726));
+        backdrop-filter: blur(0px);
+        border-top: 1px solid rgba(255, 255, 255, 0.434);
+        border-right: 1px solid rgba(255, 255, 255, 0.434);
+    }
+    
+    .glassBG-Base {
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(10px) saturate(150%);
+        filter: blur(10px) saturate(150%);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.07);
+        background: rgba(255, 255, 255, 0.1);
+    }
+    
+    .glassBG-Base::before {
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+    }
+    
+    .glassBG-White {
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(10px) saturate(150%);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.07);
+        background: rgba(255, 255, 255, 0.15);
+    }
+    
+    .glassBG-Blue {
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(10px) saturate(150%);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.07);
+        background: rgba(100, 149, 237, 0.15);
+    }
+    
+    .glassBG-Pink {
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(10px) saturate(150%);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.07);
+        background: rgba(255, 182, 193, 0.15);
+    }
+    
+    .glassBG-WhiteGray {
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(10px) saturate(150%);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.07);
+        background-clip: padding-box;
+        background: rgba(128, 128, 128, 0.15);
+    }
+    
+    .glassBG-Gray {
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(10px) saturate(150%);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.07);
+        background-clip: padding-box;
+        background: rgba(0, 0, 0, 0.2);
+    }
+    
+    .glassBG {
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(10px) saturate(150%);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.07);
+        background-clip: padding-box;
+        background: rgba(0, 0, 0, 0.2);
+    }
+    
+    .glassBG-BlackGray {
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px) saturate(150%);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25);
+        background-clip: padding-box;
+        background: rgba(0, 0, 0, 0.5);
+    }
+    
+    .glassBG-Black {
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px) saturate(150%);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.35);
+        background-clip: padding-box;
+        background: rgba(0, 0, 0, 0.65);
+    }
+    
+    .solidBG-Black {
+        background-color: black;
+    }

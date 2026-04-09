@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   data-name="Layer 1"
+   viewBox="0 0 4500 3000"
+   preserveAspectRatio="none"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="waves.svg"
+   width="4500"
+   height="3000"
+   inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.1302255"
+     inkscape:cx="1950.4629"
+     inkscape:cy="2223.0669"
+     inkscape:window-width="1920"
+     inkscape:window-height="974"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1">
+    <inkscape:page
+       x="0"
+       y="0"
+       width="4500"
+       height="3000"
+       id="page1"
+       margin="0"
+       bleed="0" />
+  </sodipodi:namedview>
+  <path
+     id="path1"
+     style="fill:#000000"
+     d="M 1435.5825,567.13153 C 1154.2833,335.3509 691.4059,422.34432 0,724.78686 V 1818.8116 c 599.25806,-0.5724 539.96435,673.9341 1082.3491,683.1617 672.3275,-15.456 755.5949,-272.6717 1531.1383,-269.1871 470.0203,-127.8201 1578.4723,652.029 1886.5126,266.9123 V 601.92242 C 4015.343,479.85555 3144.9396,449.13523 2767.0671,654.27035 2146.6008,817.26249 1932.6091,806.69793 1435.5825,567.13153 Z"
+     sodipodi:nodetypes="ccccccccc" />
+</svg>

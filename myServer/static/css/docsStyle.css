@@ -1,0 +1,49 @@
+/*_________________ Docs stuffs _____________*/
+    /* Maybe it is better to converts it to the grid systems*/
+    .SECTION_DOCUMENTE {
+        margin-top: 50px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: start;
+        gap: 10px;
+        flex-wrap: wrap;
+
+    }
+
+    .DOCUMENTE {
+        flex: 0 0 calc(25% - 40px);
+        height: 400px;
+        background-color: gray;
+        border-radius: 5px;
+        padding: 10px;
+    }
+
+    .DOCUMENTE_LINK {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .DOC_GIF {
+        background-color: white;
+        padding: 15px;
+        width: calc(100% - 30px);
+        border-radius: 5px;
+    }
+
+    .DOCUMENTE_LINK h3 {
+        margin-top: 5px;
+        color: black;
+        text-decoration: none;
+    }
+
+    .DOCUMENTE_LINK p {
+        font-size: smaller;
+        color: black;
+        text-decoration: none;
+    }
+
+    .DOCUMENTE_LINK {
+        text-decoration: none;
+    }

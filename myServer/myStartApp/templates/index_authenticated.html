@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+<!---->
+{% load static %}
+<!---->
+{% block title %} Login page {% endblock %}
+<!---->
+
+<!-- Page CSS override-->{% block pageCss %}
+<link rel="stylesheet" href="{% static 'css/loginStyle.css' %}">
+<!---->{% endblock %}
+
+<!-- Content override-->
+{% block content %}
+
+<!--LOGIN and sign up FORM-->
+<section class="authentication-container">
+
+    <div class=" FLEX_CONTAINER_LOGIN_TAB">
+        <!-- Buttons to change between forms-->
+        <div class="FLEX_BOX_LOGIN_BUTTON Login-Buttons">
+            <button class="BUTTON_FORM_CHANGE CURRENT_FORM" id="BUTTON_FORM_CHANGE_LOGIN" type="button">Login</button>
+            <button class="BUTTON_FORM_CHANGE" id="BUTTON_FORM_CHANGE_SIGNUP" type="button">Signup</button>
+        </div>
+
+        <!-- Login form -->
+        <div class="glassBG-White FLEX_BOX_LOGIN_FORM" id="FORM_LOGIN">
+            <form action="{% url 'login' %}" method="post">
+                {% csrf_token %}
+                <input class="INPUT_LOGIN" type="email" name="email" required placeholder="Email">
+                <input class="INPUT_LOGIN" type="password" name="password" required placeholder="Password">
+                <button class="LOGIN_BUTTON" type="submit" name="form_type" value="login">Login</button>
+            </form>
+        </div>
+
+        <!-- Sign up form -->
+        <div class=" glassBG-White FLEX_BOX_LOGIN_FORM INACTIVE" id="FORM_SIGNUP">
+            <form action="{% url 'login' %}" method="post">
+                {% csrf_token %}
+                <input class="INPUT_LOGIN" type="text" name="first-name" required placeholder="First Name">
+                <input class="INPUT_LOGIN" type="text" name="last-name" required placeholder="Last Name">
+                <input class="INPUT_LOGIN" type="text" name="username" required placeholder="Username">
+                <input class="INPUT_LOGIN" type="email" name="email" required placeholder="Email">
+                <input class="INPUT_LOGIN" type="password" name="password" required placeholder="Password">
+                <input class="INPUT_LOGIN" type="password" name="reapet-password" required placeholder="Password">
+                <button class="LOGIN_BUTTON" type="submit" name="form_type" value="signup">Signup</button>
+            </form>
+        </div>
+    </div>
+
+
+</section>
+<!-- The script for closing and opening the sign up and login forms-->
+<script>
+    const loginTab = document.getElementById('BUTTON_FORM_CHANGE_LOGIN');
+    const signupTab = document.getElementById('BUTTON_FORM_CHANGE_SIGNUP');
+    const loginForm = document.getElementById('FORM_LOGIN');
+    const signupForm = document.getElementById('FORM_SIGNUP');
+
+    loginTab.addEventListener('click', () => {
+        loginTab.classList.add('CURRENT_FORM');
+        signupTab.classList.remove('CURRENT_FORM');
+        signupForm.classList.add('INACTIVE');
+        loginForm.classList.remove('INACTIVE');
+    });
+
+    signupTab.addEventListener('click', () => {
+        signupTab.classList.add('CURRENT_FORM');
+        loginTab.classList.remove('CURRENT_FORM');
+        loginForm.classList.add('INACTIVE');
+        signupForm.classList.remove('INACTIVE');
+    });
+</script>
+{% endblock %}

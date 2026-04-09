@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Sign Up</title>
+    <link rel="stylesheet" href="../../static/css/styles.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <!-- Background stuffs-->
+    <div class="backgrosund"></div>
+    <div class="ball ball-color1"></div>
+    <div class="ball ball-color2"></div>
+    <div class="ball ball-color3"></div>
+
+    <!-- Navbar stuffs-->
+    <section class="SECTION_NAVBAR">
+        <div class="navbar">
+            <ul>
+                <li>
+                    <a href="Index.html">HOME</a>
+                </li>
+                <li>
+                    <a href="Docs.html">Documenentations</a>
+                </li>
+                <li>
+                    <a href="AboutMe.html">AboutUs</a>
+                </li>
+                <li>
+                    <a href="Login.html">Login</a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+
+    <!--LOGIN and sign up FORM-->
+    <section class="SECTION_LOGIN">
+        <div class=" FLEX_CONTAINER_LOGIN_TAB">
+            <!-- Buttons to change between forms-->
+            <div class="FLEX_BOX_LOGIN_BUTTON Login-Buttons">
+                <button class="BUTTON_FORM_CHANGE CURRENT_FORM" id="BUTTON_FORM_CHANGE_LOGIN" type="button">Login</button>
+                <button class="BUTTON_FORM_CHANGE" id="BUTTON_FORM_CHANGE_SIGNUP" type="button">Signup</button>
+            </div>
+
+            <!-- Login form -->
+            <div class="glassBG-White FLEX_BOX_LOGIN_FORM" id="FORM_LOGIN">
+                <form action="http://127.0.0.1:8000/" method="post">
+                    {% csrf_token %}
+                    <input class="INPUT_LOGIN" type="email" name="email" required placeholder="Email">
+                    <input class="INPUT_LOGIN" type="password" name="password" required placeholder="Password">
+                    <button class="LOGIN_BUTTON">Login</button>
+                </form>
+            </div>
+
+            <!-- Sign up form -->
+            <div class=" glassBG-White FLEX_BOX_LOGIN_FORM INACTIVE" id="FORM_SIGNUP">
+                <form action="">
+                    <input class="INPUT_LOGIN" type="text" name="first-name" required placeholder="First Name">
+                    <input class="INPUT_LOGIN" type="text" name="last-name" required placeholder="Last Name">
+                    <input class="INPUT_LOGIN" type="email" name="email" required placeholder="Email">
+                    <input class="INPUT_LOGIN" type="password" name="password" required placeholder="Password">
+                    <input class="INPUT_LOGIN" type="password" name="reapet-password" required placeholder="Password">
+                    <button class="LOGIN_BUTTON" type="submit">Signup</button>
+                </form>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- The script for closing and opening the sign up and login forms-->
+    <script>
+        const loginTab = document.getElementById('BUTTON_FORM_CHANGE_LOGIN');
+        const signupTab = document.getElementById('BUTTON_FORM_CHANGE_SIGNUP');
+        const loginForm = document.getElementById('FORM_LOGIN');
+        const signupForm = document.getElementById('FORM_SIGNUP');
+
+        loginTab.addEventListener('click', () => {
+            loginTab.classList.add('CURRENT_FORM');
+            signupTab.classList.remove('CURRENT_FORM');
+            loginForm.classList.add('INACTIVE');
+            signupForm.classList.remove('INACTIVE');
+        });
+
+        signupTab.addEventListener('click', () => {
+            signupTab.classList.add('CURRENT_FORM');
+            loginTab.classList.remove('CURRENT_FORM');
+            signupForm.classList.add('INACTIVE');
+            loginForm.classList.remove('INACTIVE');
+        });
+    </script>
+
+
+</body>
+
+</html>

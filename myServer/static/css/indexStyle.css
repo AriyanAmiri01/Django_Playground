@@ -1,0 +1,161 @@
+/* ===== ===== ===== Curved Background ===== ===== ===== */
+
+.image-container {
+    margin-top: 100px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: end;
+    padding: 10px;
+    aspect-ratio: 9/ 6;
+    background-image: url("../images/Photo2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    mask: url(../images/waves.svg);
+    mask-size: cover;
+}
+
+.image-container .overlay {
+    width: 100%;
+    position: absolute;
+    padding: 10%;
+}
+
+.image-container .overlay .box {
+    margin-top: 10%;
+    display: block;
+    width: fit-content;
+    background-color: white;
+    padding: 10px;
+    border-radius: 16px;
+    ;
+}
+
+.image-container .image2 button {
+    padding: 10px;
+}
+
+
+/* ===== ====== ====== Carousel ====== ====== =====*/
+
+.carousel-container {
+    background: rgba(33, 33, 33, 0.71);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 100px 30px;
+}
+
+.carousel-container .next {
+    width: 64px;
+    height: 64px;
+    min-width: 64px;
+    min-height: 64px;
+    border-radius: 50%;
+    margin-left: 15px;
+}
+
+.carousel-container .prev {
+    width: 164px;
+    height: 64px;
+    min-width: 64px;
+    min-height: 64px;
+    margin-right: 15px;
+    border-radius: 50%;
+}
+
+.carousel-container .prev:hover,
+.carousel-container .next:hover {
+    background-color: rgba(0, 0, 0, 0.16);
+}
+
+.carousel-container .viewport {
+    overflow: hidden;
+}
+
+.carousel-container .track {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s ease-out;
+}
+
+.carousel-container .track .item {
+    flex: 0 0 calc((100% - 3 * 20px) / 4);
+    /* Visual Effect*/
+    padding: 10px;
+    background: rgb(60, 60, 60);
+    display: flex;
+    flex-direction: column;
+}
+
+.carousel-container .track .item h3 {
+    margin-top: 10px;
+    border-top: solid white 1px;
+    color: white;
+    display: inline;
+    width: 100%;
+    padding-top: 10px;
+}
+
+.carousel-container .track .item img {
+    width: 100%;
+    height: auto;
+    background-color: rgb(120, 120, 120);
+    padding: 12px;
+}
+
+.carousel-container .track .item p {
+    color: rgb(180, 180, 180);
+}
+
+.carousel-container .track .item a {
+    width: 100%;
+    margin-top: auto;
+    padding-top: 20px;
+}
+
+
+/* ===== ===== ===== Main Stuff ===== ===== ===== */
+
+.main-section {
+    width: 100%;
+    padding: 10px;
+}
+
+.main-section .sectionContent {
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.main-section .SUBLINK_GRAY {
+    border-bottom: 1px black;
+    color: gray;
+    font-size: medium;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
+/*_________________ WHO AM I IN STUFF _______________*/
+
+.SECTION_WHO {
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.FLEX_CONTAINER_WHO {
+    display: flex;
+    flex-direction: row;
+}
+
+.FLEX_BOX_WHO1 {
+    flex: 3 3 300px;
+}
+
+.FLEX_BOX_WHO2 {
+    flex: 1 1 100px;
+}

@@ -1,0 +1,114 @@
+<!-- base.html it is used for the main navbar and the main footer of all the webpages -->
+{% load static %}
+<!--link rel="icon" href="{% static 'images/favicon.ico' %}"-->
+
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{% block siteDescription %} Default Description {% endblock %}">
+    <meta name="author" content="Awolf Nigler">
+    <title>{% block title %}Default Title{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+    <!---->{% block pageCss %}
+    <!-- This has to be overwritten by each child page-->
+    <!---->{% endblock %}
+    <link rel="icon" href="">
+    <script src="../../static/js/script.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <!-- Navbar stuffs-->
+        <section class="navbar-container glassBG-White">
+            <div class="navbar">
+                <div class="left">
+                    <input class="CheckBox" type="checkbox" id="hamburger-checkbox">
+                    <a href="">
+                        <img src="../../static/images/Logo.png" alt="some image">
+                    </a>
+                    <label class="Label" for="hamburger-checkbox">
+                        ☰
+                    </label>
+                    <div class="items">
+                        <a class="item" href="{% url 'index' %}">HOME</a>
+                        <a class="item" href="{% url 'docs' %}">Documentations</a>
+                        <a class="item" href="{% url 'about' %}">AboutUs</a>
+                        <a class="item" href="{% url 'login' %}">Login</a>
+                    </div>
+                </div>
+                <div class="right">
+                    <form class="search-bar" action="/search" method="get">
+                        <input type="text" name="q" placeholder="Search...">
+                        <button type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </header>
+
+    <!-- For django debugging -->
+    {% if messages %}
+    <ul style="margin-top: 200px; z-index: 4; padding:5px; border-radius: 5px; background-color: antiquewhite;">
+        {% for message in messages %}
+        <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>
+            {{ message }}
+        </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    <div class="background-container">
+        <!-- Background stuffs-->
+        <div class="backgrosund"></div>
+        <div class="ball ball-color1"></div>
+        <div class="ball ball-color2"></div>
+        <div class="ball ball-color3"></div>
+    </div>
+
+
+    <main>
+        {% block content %}
+        <h1>Message</h1>
+        <p>This is the default content</p>
+        {% endblock %}
+    </main>
+
+
+    <!-- Footer Stuffs-->
+    <footer class="footer-container">
+        <div class="footer-content">
+            <div class="box1">
+                <h1>Usefull links</h1>
+                <a href="">I am a link</a>
+                <a href="">I am a link</a>
+                <a href="">I am a link</a>
+                <h1>Contact us</h1>
+                <a href="">I am a link</a>
+                <a href="">I am a link</a>
+            </div>
+            <div class="box2">
+                <h1>Colaborate with us</h1>
+                <a href="">I am a link</a>
+                <a href="">I am a link</a>
+                <a href="">I am a link</a>
+                <a href="">I am a link</a>
+                <a href="">I am a link</a>
+            </div>
+            <div class="box3">
+                <img src="../../static/images/Logo.png" alt="">
+
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>

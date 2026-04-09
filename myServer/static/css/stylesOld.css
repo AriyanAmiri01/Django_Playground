@@ -1,0 +1,574 @@
+    * {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-family: sans-serif;
+        box-sizing: border-box;
+    }
+    /* ===== ===== ===== Navbar ===== ===== =====*/
+    
+    .navbar-container {
+        position: fixed;
+        top: 0;
+        z-index: 1;
+        width: 100%;
+        padding: 0px 10px 0px 10px;
+    }
+    
+    .navbar-container .navbar {
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .navbar-container .navbar .left {
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-items: center;
+    }
+    
+    .navbar-container .navbar .right {
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+        align-items: center;
+    }
+    
+    .navbar-container .navbar .items {
+        width: fit-content;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .navbar-container .navbar .right .search-bar {
+        width: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: end;
+        padding: 10px;
+    }
+    
+    .navbar-container .navbar .left img {
+        height: 48px;
+    }
+    
+    .navbar-container .navbar .navbar a {
+        color: black;
+    }
+    
+    .navbar-container .navbar .item {
+        padding: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 4px;
+        text-decoration: none;
+        font-size: larger;
+        border-radius: 15px;
+    }
+    
+    .navbar-container .navbar .item:hover {
+        background: rgba(171, 171, 171, 0.5);
+    }
+    
+    .navbar-container .search-bar input {
+        flex: 2;
+        padding: 12px;
+        background: rgb(237, 237, 237);
+        border-radius: 16px 0px 0px 16px;
+        width: 50%;
+    }
+    
+    .navbar-container .search-bar button {
+        max-width: 100px;
+        flex: 1;
+        width: fit-content;
+        padding: 10px;
+        background: lightgrey;
+    }
+    
+    .navbar-container .CheckBox {
+        display: none;
+    }
+    
+    .navbar-container .Label {
+        display: none;
+    }
+    /* Hamburger navbar */
+    
+    @media (max-width: 650px) {
+        .navbar {
+            flex-direction: column;
+            justify-content: start;
+            align-items: center;
+        }
+        .navbar .left {
+            display: flex;
+            flex-direction: column;
+        }
+        .Label {
+            display: block;
+            cursor: pointer;
+            position: relative;
+            width: 30px;
+            height: 30px;
+        }
+        .items {
+            width: 100%;
+            flex-direction: column;
+            max-height: 0;
+            overflow: hidden;
+            transition: 0.5s ease-in-out;
+        }
+        .navbar .item {
+            width: 100%;
+            padding: 15px;
+            border-radius: 0;
+            border-top: 0.5mm solid rgb(52, 53, 71);
+        }
+        .navbar .search-bar {
+            justify-content: center;
+        }
+        .navbar input {
+            border-radius: 0;
+        }
+        .CheckBox:checked~.items {
+            max-height: 500px;
+        }
+        .CheckBox:checked~.logo label::before {
+            content: "close";
+        }
+    }
+    /* ===== ===== ===== LiveBackgroung ===== ===== =====*/
+    
+    .ball {
+        position: fixed;
+        border-radius: 50%;
+        filter: blur(15px);
+        z-index: -1;
+    }
+    
+    .ball-color1 {
+        background: radial-gradient(circle at center, rgba(255, 255, 200, 1) 0%, rgba(255, 200, 50, 0.7) 40%, rgba(255, 150, 0, 0.3) 70%, rgba(255, 150, 0, 0) 100%);
+        top: 0%;
+        left: 25%;
+        width: 300px;
+        height: 300px;
+        animation-name: ANIMATION_BULB_1;
+        animation-duration: 15s;
+        animation-delay: 0s;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: both;
+        animation-iteration-count: infinite;
+        animation-direction: normal;
+    }
+    
+    .ball-color2 {
+        background: radial-gradient(circle at center, rgb(255, 169, 199) 0%, hwb(314 14% 10% / 0.7) 40%, rgba(145, 16, 82, 0.3) 70%, rgba(255, 150, 0, 0) 100%);
+        top: 50%;
+        left: 75%;
+        width: 400px;
+        height: 400px;
+        animation-name: ANIMATION_BULB_1;
+        animation-duration: 15s;
+        animation-delay: 10s;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: both;
+        animation-iteration-count: infinite;
+        animation-direction: normal;
+    }
+    
+    .ball-color3 {
+        background: radial-gradient(circle at center, rgb(255, 151, 243) 0%, rgba(207, 53, 189, 0.7) 40%, rgba(116, 33, 106, 0.3) 70%, rgba(255, 150, 0, 0) 100%);
+        top: 400px;
+        left: 250px;
+        width: 250px;
+        height: 200px;
+        animation-name: ANIMATION_BULB_1;
+        animation-duration: 15s;
+        animation-delay: 10s;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: both;
+        animation-iteration-count: infinite;
+        animation-direction: normal;
+    }
+    /* Animation stuffs*/
+    
+    @keyframes ANIMATION_BULB_1 {
+        0% {
+            transform: translate(0px, 0px);
+        }
+        25% {
+            transform: translate(-50px, 200px);
+        }
+        50% {
+            transform: translate(50px, 0px);
+        }
+        75% {
+            transform: translate(25px, -50px);
+        }
+        100% {
+            transform: translate(0px, 0px);
+        }
+    }
+    
+    .background {
+        position: fixed;
+        z-index: -1;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, rgb(120, 138, 146), rgb(255, 255, 255));
+        backdrop-filter: blur(10px);
+    }
+    /* ===== ===== ===== Footer Stuffs ===== ===== =====*/
+    
+    .footer-container {
+        position: relative;
+        bottom: 0px;
+        padding: 20px 80px;
+        background-color: rgb(148, 74, 74);
+    }
+    
+    .footer-content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: start;
+        gap: 10px;
+    }
+    
+    .footer-content a {
+        color: black;
+        text-decoration: none;
+        font-size: larger;
+    }
+    
+    .footer-content .box1 {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        gap: 5px;
+        align-items: start;
+        padding-top: 15px;
+    }
+    
+    .footer-content .box2 {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        gap: 5px;
+        align-items: start;
+        padding-top: 15px;
+    }
+    
+    .footer-content .box3 {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+    }
+    
+    .footer-content img {
+        width: 60%;
+        color: white;
+    }
+    /* ===== ===== ===== Component Background ===== ===== =====*/
+    
+    .glassBG-White-OLD {
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to top right, rgba(154, 177, 177, 0.365), rgba(255, 255, 255, 0.21));
+        backdrop-filter: blur(0px);
+        border-top: 1px solid rgba(255, 255, 255, 0.434);
+        border-right: 1px solid rgba(255, 255, 255, 0.434);
+    }
+    
+    .glassBG-Black-OLD {
+        background: linear-gradient(to top right, rgba(21, 42, 51, 0.831), rgba(72, 47, 47, 0.726));
+        backdrop-filter: blur(0px);
+        border-top: 1px solid rgba(255, 255, 255, 0.434);
+        border-right: 1px solid rgba(255, 255, 255, 0.434);
+    }
+    
+    .glassBG-Base {
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(10px) saturate(150%);
+        filter: blur(10px) saturate(150%);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.07);
+        background: rgba(255, 255, 255, 0.1);
+    }
+    
+    .glassBG-Base::before {
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+    }
+    
+    .glassBG-White {
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(10px) saturate(150%);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.07);
+        background: rgba(255, 255, 255, 0.15);
+    }
+    
+    .glassBG-Blue {
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(10px) saturate(150%);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.07);
+        background: rgba(100, 149, 237, 0.15);
+    }
+    
+    .glassBG-Pink {
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(10px) saturate(150%);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.07);
+        background: rgba(255, 182, 193, 0.15);
+    }
+    
+    .glassBG-WhiteGray {
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(10px) saturate(150%);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.07);
+        background-clip: padding-box;
+        background: rgba(128, 128, 128, 0.15);
+    }
+    
+    .glassBG-Gray {
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(10px) saturate(150%);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.07);
+        background-clip: padding-box;
+        background: rgba(0, 0, 0, 0.2);
+    }
+    
+    .glassBG {
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(10px) saturate(150%);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.07);
+        background-clip: padding-box;
+        background: rgba(0, 0, 0, 0.2);
+    }
+    
+    .glassBG-BlackGray {
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px) saturate(150%);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25);
+        background-clip: padding-box;
+        background: rgba(0, 0, 0, 0.5);
+    }
+    
+    .glassBG-Black {
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px) saturate(150%);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.35);
+        background-clip: padding-box;
+        background: rgba(0, 0, 0, 0.65);
+    }
+    
+    .solidBG-Black {
+        background-color: black;
+    }
+    /* ===== ===== ===== Curved Background ===== ===== ===== */
+    
+    .image-container {
+        margin-top: 100px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: end;
+        padding: 10px;
+        aspect-ratio: 9/ 6;
+        background-image: url("../images/Photo2.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        mask: url(../images/waves.svg);
+        mask-size: cover;
+    }
+    
+    .image-container .overlay {
+        width: 100%;
+        position: absolute;
+        padding: 10%;
+    }
+    
+    .image-container .overlay .box {
+        margin-top: 10%;
+        display: block;
+        width: fit-content;
+        background-color: white;
+        padding: 10px;
+        border-radius: 16px;
+        ;
+    }
+    
+    .image2 button {
+        padding: 10px;
+    }
+    /* ===== ====== ====== Carousel ====== ====== =====*/
+    
+    .carousel-container {
+        background: rgba(33, 33, 33, 0.71);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 100px 30px;
+    }
+    
+    .carousel-container .prev {
+        width: 64px;
+        height: 64px;
+        min-width: 64px;
+        min-height: 64px;
+        margin-right: 15px;
+        border-radius: 100px;
+    }
+    
+    .carousel-container .next {
+        width: 64px;
+        height: 64px;
+        min-width: 64px;
+        min-height: 64px;
+        border-radius: 100px;
+        margin-left: 15px;
+    }
+    
+    .carousel-container .viewport {
+        overflow: hidden;
+    }
+    
+    .carousel-container .track {
+        --gap: 15px;
+        --numberOfSlides: 4;
+        display: flex;
+        gap: 20px;
+        transition: ease-out 0.5s;
+    }
+    
+    .carousel-container .track .item {
+        flex: 0 0 calc((100% - 3 * 20px) / 4);
+        /* Visual Effect*/
+        padding: 10px;
+        background: rgb(60, 60, 60);
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+    }
+    
+    .carousel-container .track .item h3 {
+        margin-top: 10px;
+        border-top: solid white 1px;
+        color: white;
+        display: inline;
+        width: 100%;
+        padding-top: 10px;
+    }
+    
+    .carousel-container .track .item img {
+        width: 100%;
+        background-color: rgb(120, 120, 120);
+        height: 200px;
+        padding: 12px;
+    }
+    
+    .carousel-container .track .item p {
+        color: rgb(180, 180, 180)
+    }
+    
+    .carousel-container .track .item a {
+        width: 100%;
+        margin-top: auto;
+        padding-top: 20px;
+    }
+    /* ===== ===== ===== Main Stuff ===== ===== ===== */
+    
+    .sectionContent {
+        display: flex;
+        justify-content: start;
+        flex-direction: column;
+        padding: 10px;
+    }
+    
+    .main-section {
+        width: 100%;
+        padding: 0px 50px;
+    }
+    
+    .SUBLINK_GRAY {
+        border-bottom: 1px black;
+        color: gray;
+        font-size: medium;
+        font-weight: bold;
+        text-decoration: none;
+    }
+    
+    .baseContainer {
+        padding: 20px;
+    }
+    /* ===== ===== ===== Form Styles ===== ===== ===== */
+    
+    .contact-form label {
+        color: white;
+        display: block;
+        margin-top: 10px;
+        font-weight: bold;
+    }
+    
+    .contact-form p {
+        color: white;
+    }
+    
+    .contact-form input {
+        background-color: rgba(228, 228, 228, 0.685);
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid white;
+        box-sizing: content-box;
+    }
+    
+    .contact-form button {
+        color: white;
+        font-weight: bold;
+        margin-top: 10px;
+        padding: 10px;
+        width: 20%;
+        background-color: rgba(228, 228, 228, 0.797);
+        border: 2px solid white;
+    }
+    
+    .contact-form button:hover {
+        background-color: rgba(147, 147, 147, 0.797);
+    }
+    /*_________________ WHO AM I IN STUFF _______________*/
+    
+    .SECTION_WHO {
+        padding: 20px;
+        margin-top: 20px;
+    }
+    
+    .FLEX_CONTAINER_WHO {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .FLEX_BOX_WHO1 {
+        flex: 3 3 300px;
+    }
+    
+    .FLEX_BOX_WHO2 {
+        flex: 1 1 100px;
+    }
